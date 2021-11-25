@@ -1,17 +1,20 @@
 #include <stdio.h>
 
+/* Exercise 1-8. Write a program to count 
+blanks, tabs, and newlines. */
+
 int main()
 {
-	int c, bc, nlc, tc;
-	bc = 0, nlc = 0, tc = 0;
-	while ((c = getchar()) != EOF)
+	int character, backspace_count, newline_count, tab_count;
+	backspace_count = 0, newline_count = 0, tab_count = 0;
+	while ((character = getchar()) != EOF)
 	{
-		if (c == ' ')
-			bc++;
-		if (c == '\n')
-			nlc++;
-		if (c == '\t')
-			tc++;
+		if (character == ' ')
+			backspace_count++;
+		if (character == '\n')
+			newline_count++;
+		if (character == '\t')
+			tab_count++;
 	}
-	printf("\nblanks: %d; newlines: %d; tabs: %d\n", bc, nlc, tc);
+	printf("\nblanks: %d; newlines: %d; tabs: %d\n", backspace_count, newline_count, tab_count);
 }

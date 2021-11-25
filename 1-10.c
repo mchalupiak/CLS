@@ -1,24 +1,31 @@
 #include <stdio.h>
 
+/* Exercise 1-10. Write a program to copy
+its input to its ouput, replacing each tab
+by \t, each backspace by \b, and each
+backslash by \\. This makes tabs and 
+backspaces visible in an unambiguous
+way. */
+
 int main()
 {
-	int c;
+	int character;
 
-	while ((c = getchar()) != EOF)
+	while ((character = getchar()) != EOF)
 	{
-		if (c == '\t')
+		if (character == '\t')
 		{
 			putchar('\\');
 			putchar('t');
 		}
 
-		if (c == '\b')
+		if (character == '\b')
 		{
 			putchar('\\');
 			putchar('b');
 		}
 
-		if (c == '\\')
+		if (character == '\\')
 		{
 			putchar('\\');
 			putchar('\\');
@@ -26,7 +33,7 @@ int main()
 
 		else
 		{
-			putchar(c);
+			putchar(character);
 		}
 	}
 }
