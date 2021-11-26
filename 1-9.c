@@ -10,14 +10,16 @@ int main()
 	int space_count = 0;
 	while ((character = getchar()) != EOF)
 	{
-		if (character != ' ')
-			putchar(character);
-			space_count == 0;
-		
-		if (space_count == 0 && character == ' ')
+		if (character != ' ' && character != '\t')
 		{
-			space_count++;
+			putchar(character);
+			space_count = 0;
+		}
+		
+		if (space_count == 0 && (character == ' ' || character == '\t'))
+		{
 			putchar(' ');
+			space_count++;
 		}
 	}
 }
