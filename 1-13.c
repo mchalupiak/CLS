@@ -13,7 +13,7 @@ int main()
 	int character, word_length;
 	int character_counts[MAX_WORD_LEN];
 	int space_count = 0;
-	for (int i = 0; i < MAX_WORD_LEN + 1; i++)
+	for (int i = 0; i < MAX_WORD_LEN; i++)
 	{
 		character_counts[i] = 0;
 	}
@@ -31,32 +31,29 @@ int main()
 			word_length = 0;
 		}
 	}
-	printf("horizontal or vertical (h or v):\n");
-//	while ((character = getchar()) != 'h' || (character = getchar()) != 'v')
-	character = getchar();
 
-	if (character == 'v')
+	printf("vertical");
+	printf("number of letters per word\n");
+	for (int i = 1; i < 26; i++)
 	{
-		printf("number of letters per word\n");
-		for (int i = 1; i < 26; i++)
-		{
-			if (character_counts[i] > 0)
-				printf("%d  ", i);
-		}
-		printf("\n");
-		for (int i = 1; i < 26; i++ )
-		{
-			for (int j = 1; j < 26; j++)
-			{
-					if (character_counts[j] >= i)
-				{
-					if (j < 10)
-						printf("#  ");
-					else
-						printf("##  ");
-				}
-			}
-			putchar('\n');
-		}
+		if (character_counts[i] > 0)
+			printf("%d  ", i);
 	}
+	printf("\n");
+	for (int i = 1; i < 26; i++ )
+	{
+		for (int j = 1; j < 26; j++)
+		{
+				if (character_counts[j] >= i)
+			{
+				if (j < 10)
+					printf("#  ");
+				else
+					printf("##  ");
+			}
+		}
+		putchar('\n');
+	}
+
+	printf("horizontal");
 }
