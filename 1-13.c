@@ -12,7 +12,7 @@ int main()
 {
 	int character, word_length;
 	int character_counts[MAX_WORD_LEN];
-	int space_count = 0;
+
 	for (int i = 0; i < MAX_WORD_LEN; i++)
 	{
 		character_counts[i] = 0;
@@ -55,5 +55,21 @@ int main()
 		putchar('\n');
 	}
 
-	printf("horizontal");
+	printf("horizontal\n");
+	for (int i = 1; i < 26; i++)
+	{
+	    if (character_counts[i] > 0)
+	    {
+	        if (i < 10)
+	            printf("%d  ", i);
+	        else
+	            printf("%d ", i);
+	    }
+	    for (int j = 1; j <= character_counts[i]; j++)
+	    {
+	        printf("#");
+	    }
+	    if (character_counts[i] > 0)
+	        printf("\n");
+	}
 }
