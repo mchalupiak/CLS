@@ -12,6 +12,7 @@ int main()
 {
 	int character, word_length;
 	int character_counts[MAX_WORD_LEN];
+	printf("");
 
 	for (int i = 0; i < MAX_WORD_LEN; i++)
 	{
